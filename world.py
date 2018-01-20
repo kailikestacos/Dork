@@ -88,7 +88,7 @@ world_dsl = """
 |EN|EN|VT|EN|EN|
 |EN|  |  |  |EN|
 |EN|FG|EN|  |TT|
-|TT|  |ST|FG|EN|
+|TT|  |ST|TT|EN|
 |FG|  |EN|  |FG|
 """
 
@@ -135,8 +135,8 @@ def parse_world_dsl():
 
 
 class TraderTile(MapTile):
+    Trader = npc.Trader()
     def __init(self, x, y):
-        self.trader = npc.Trader()
         super().__init__(x, y)
 
     def check_if_trade(self, player):
@@ -147,10 +147,10 @@ class TraderTile(MapTile):
                 return
             elif user_input in ['B','b']:
                 print("Here's what you can buy: ")
-                self.trade(buyer=player, seller=self.trader)
+                self.trade(buyer=player, seller=self.Trader)
             elif user_input in ['S','s']:
                 print("Here's what you can sell: ")
-                self.trade(buyer=self.trader, seller=player)
+                self.trade(buyer=self.Trader, seller=player)
             else:
                 print("Do not keep testing me with invalid actions.")
 
