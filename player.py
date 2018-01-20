@@ -11,6 +11,7 @@ class Player:
         self.y = world.start_tile_location[1]
         self.hp = 100
         self.gold = 5
+        self.victory = False
 
     def print_inventory(self):
         print("Inventory:")

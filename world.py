@@ -34,8 +34,8 @@ class EnemyTile(MapTile):
         else:
             self.enemy = enemy.Rockmonster()
 
-
         super().__init__(x, y)
+
     def intro_text(self):
         if self.enemy.is_alive:
             text = self.enemy.alive_text
@@ -88,7 +88,7 @@ world_dsl = """
 |EN|EN|VT|EN|EN|
 |EN|  |  |  |EN|
 |EN|FG|EN|  |TT|
-|TT|  |ST|TT|EN|
+|TT|  |ST|EN|EN|
 |FG|  |EN|  |FG|
 """
 
