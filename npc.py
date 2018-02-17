@@ -1,7 +1,8 @@
 import items
+import quests
 
 
-class NonPlayableCharacter():
+class NonPlayableCharacter:
     def __init__(self):
         raise NotImplementedError("Do not create raw NPC objects")
 
@@ -12,5 +13,10 @@ class NonPlayableCharacter():
 class Trader(NonPlayableCharacter):
     def __init__(self):
         self.name = "Trader"
-        self.gold = 100
-        self.inventory = [items.HealingPotion()]
+        self.scrap = 100
+        self.inventory = [items.Medkit()]
+
+class Sam(NonPlayableCharacter):
+    def __init__(self):
+        self.name = "Sam"
+        self.quests = [quests.StartingOut]
